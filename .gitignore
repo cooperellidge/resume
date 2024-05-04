@@ -1,4 +1,6 @@
-confidential.dat
 resume.pdf
 resume.synctex.gz
+
+data/*
+tmp/*
 out/*
