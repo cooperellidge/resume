@@ -19,7 +19,10 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \input{glyphtounicode}
-
+\usepackage{datatool, filecontents}
+\DTLsetseparator{,}
+\DTLloaddb[noheader, keys={thekey,thevalue}]{confidential}{confidential.dat}
+\newcommand{\var}[1]{\DTLfetch{confidential}{thekey}{#1}{thevalue}}
 
 %----------FONT OPTIONS----------
 % sans-serif
@@ -102,117 +105,164 @@
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{document}
 
 %----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
 \begin{center}
-    \textbf{\Huge \scshape Jake Ryan} \\ \vspace{1pt}
-    \small 123-456-7890 $|$ \href{mailto:x@x.com}{\underline{jake@su.edu}} $|$ 
-    \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/jake}} $|$
-    \href{https://github.com/...}{\underline{github.com/jake}}
+  \textbf{\Huge Cooper Ellidge} \\ \vspace{1pt}
+  \small \var{mobile} $|$ \href{mailto:cooper.ellidge@gmail.com}{\underline{cooper.ellidge@gmail.com}} $|$
+  \href{https://cooperellidge.github.io}{\underline{cooperellidge.github.io}} $|$
+  \href{https://github.com/cooperellidge}{\underline{github.com/cooperellidge}}
 \end{center}
-
-
-%-----------EDUCATION-----------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Southwestern University}{Georgetown, TX}
-      {Bachelor of Arts in Computer Science, Minor in Business}{Aug. 2018 -- May 2021}
-    \resumeSubheading
-      {Blinn College}{Bryan, TX}
-      {Associate's in Liberal Arts}{Aug. 2014 -- May 2018}
-  \resumeSubHeadingListEnd
 
 
 %-----------EXPERIENCE-----------
 \section{Experience}
-  \resumeSubHeadingListStart
+\resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Undergraduate Research Assistant}{June 2020 -- Present}
-      {Texas A\&M University}{College Station, TX}
-      \resumeItemListStart
-        \resumeItem{Developed a REST API using FastAPI and PostgreSQL to store data from learning management systems}
-        \resumeItem{Developed a full-stack web application using Flask, React, PostgreSQL and Docker to analyze GitHub data}
-        \resumeItem{Explored ways to visualize GitHub collaboration in a classroom setting}
-      \resumeItemListEnd
-      
-% -----------Multiple Positions Heading-----------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
+\resumeSubheading
+{iO Energy}{}
+{Software Engineer}{Sep 2023 -- Now}
+\resumeItemListStart
+\resumeItem{Sales platform using React, Javascript, AWS (S3, Lambda, DynamoDB, Cognito, Step Functions), Flask}
+\resumeItem{Forecasting using Python, Pandas, FB Prophet}
+\resumeItem{Plans service}
+\resumeItem{Data pipeline using Snowflake, Dagster, DBT}
+\resumeItem{Internal Python package for domain-specific utilities}
+\resumeItem{Gleen using Django, React, Typescript, Docker, AWS (RDBMS, ECS)}
+\resumeItemListEnd
 
-    \resumeSubheading
-      {Information Technology Support Specialist}{Sep. 2018 -- Present}
-      {Southwestern University}{Georgetown, TX}
-      \resumeItemListStart
-        \resumeItem{Communicate with managers to set up campus computers used on campus}
-        \resumeItem{Assess and troubleshoot computer problems brought by students, faculty and staff}
-        \resumeItem{Maintain upkeep of computers, classroom equipment, and 200 printers across campus}
-    \resumeItemListEnd
+\resumeSubheading
+{Predict Australia}{}
+{Software Engineer, contracting}{May 2024 -- Now}
+\resumeItemListStart
+\resumeItem{Predictive maintenance dashboards for mining site equipment using React}
+\resumeItemListEnd
 
-    \resumeSubheading
-      {Artificial Intelligence Research Assistant}{May 2019 -- July 2019}
-      {Southwestern University}{Georgetown, TX}
-      \resumeItemListStart
-        \resumeItem{Explored methods to generate video game dungeons based off of \emph{The Legend of Zelda}}
-        \resumeItem{Developed a game in Java to test the generated dungeons}
-        \resumeItem{Contributed 50K+ lines of code to an established codebase via Git}
-        \resumeItem{Conducted  a human subject study to determine which video game dungeon generation technique is enjoyable}
-        \resumeItem{Wrote an 8-page paper and gave multiple presentations on-campus}
-        \resumeItem{Presented virtually to the World Conference on Computational Intelligence}
-      \resumeItemListEnd
+\resumeSubheading
+{Saab Australia}{}
+{Software Engineer}{Jan 2023 -- Aug 2023}
+\resumeItemListStart
+\resumeItem{9LV on Track Finder, customer demo}
+\resumeItem{9LV with Java, Vue, Typescript using MVVM architectural patterns.}
+\resumeItemListEnd
 
-  \resumeSubHeadingListEnd
+\resumeSubSubheading
+{Early Careers Lead}{Sep 2022 -- Aug 2023}
+\resumeItemListStart
+\resumeItem{Managed graduate program}
+\resumeItemListEnd
+
+\resumeSubSubheading
+{Graduate Engineer}{Jan 2021 -- Dec 2022}
+\resumeItemListStart
+\resumeItem{9LV on Track Rules Engine}
+\resumeItem{UxV motion motion}
+\resumeItem{Hospital module design for JP2060. Gold \& Silver awards nominamtion.}
+\resumeItem{Mechanical design for Swedish submarine}
+\resumeItemListEnd
+
+\resumeSubSubheading
+{Undergraduate Engineer}{Nov 2019 -- Feb 2020}
+\resumeItemListStart
+\resumeItem{Created and evaluated deep learning models using Python to improve environmental measurements
+  using sensor data. Sea trials.}
+\resumeItemListEnd
 
 
-%-----------PROJECTS-----------
-\section{Projects}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{Gitlytics} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present}
-          \resumeItemListStart
-            \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
-            \resumeItem{Implemented GitHub OAuth to get data from user’s repositories}
-            \resumeItem{Visualized GitHub data to show collaboration}
-            \resumeItem{Used Celery and Redis for asynchronous tasks}
-          \resumeItemListEnd
-      \resumeProjectHeading
-          {\textbf{Simple Paintball} $|$ \emph{Spigot API, Java, Maven, TravisCI, Git}}{May 2018 -- May 2020}
-          \resumeItemListStart
-            \resumeItem{Developed a Minecraft server plugin to entertain kids during free time for a previous job}
-            \resumeItem{Published plugin to websites gaining 2K+ downloads and an average 4.5/5-star review}
-            \resumeItem{Implemented continuous delivery using TravisCI to build the plugin upon new a release}
-            \resumeItem{Collaborated with Minecraft server administrators to suggest features and get feedback about the plugin}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
+\resumeSubheading
+{Centre for the Subatomic Structure of Matter, University of Adelaide}{}
+{Physics Summer Research Student}{Jan 2019 -- Feb 2019}
+\resumeItemListStart
+\resumeItem{Modelled signals for different theoretical dark matter particles through batch jobs submitted to a
+  cloud supercomputer.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{University of Adelaide}{}
+{Bachelor of Engineering (Mechanical)(Honours) with}{Feb 2016 -- Nov 2020}
+\resumeSubSubheading
+{Bachelor of Science (Mathematics and Theoretical Physics)}{GPA 6.7/7.0}
+\resumeSubHeadingListEnd
 
 
 
 %
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: Java, Python, C/C++, SQL (Postgres), JavaScript, HTML/CSS, R} \\
-     \textbf{Frameworks}{: React, Node.js, Flask, JUnit, WordPress, Material-UI, FastAPI} \\
-     \textbf{Developer Tools}{: Git, Docker, TravisCI, Google Cloud Platform, VS Code, Visual Studio, PyCharm, IntelliJ, Eclipse} \\
-     \textbf{Libraries}{: pandas, NumPy, Matplotlib}
-    }}
- \end{itemize}
-
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{:
+          Python,
+          JavaScript,
+          TypeScript,
+          Java,
+          HTML/CSS,
+          SQL,
+          % Fortran
+        } \\
+        \textbf{Tools}{:
+          %-----------JS frameworks
+          React,
+          Vue,
+          % Next.js,
+          % HTMX,
+          %-----------Python frameworks
+          % Django,
+          FastAPI,
+          % Chalice,
+          Streamlit,
+          %-----------Cloud, infra, CI/CD
+          AWS,
+          % Vercel,
+          Terraform,
+          Docker,
+          Jenkins,
+          %-----------Scientific stack
+          pandas,
+          NumPy,
+          SciPy,
+          Matplotlib,
+          Plotly,
+          %-----------AI/ML + data
+          keras,
+          scikit-learn,
+          FB Prophet,
+          Snowflake,
+          Dagster,
+          DBT,
+          %-----------General programming tools
+          Git,
+          GitHub,
+          Jira,
+          BitBucket,
+          Confluence,
+          FeCru,
+          Notion,
+          Figma
+        } \\
+        \textbf{Engineering Software}{:
+          %-----------CAD
+          Creo Parametric,
+          AutoDesk Inventor,
+          SolidWorks,
+          %-----------Systems Engineering
+          DOORS,
+          Windchill,
+          IFS,
+          %-----------Modelling/simulation
+          MATLAB,
+          Simulink,
+          ANSYS suite,
+          COMSOL Multiphysics
+        } \\
+        }}
+\end{itemize}
 
 %-------------------------------------------
 \end{document}
