@@ -16,9 +16,9 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: resume.tex
-          post_compile: "mkdir pdfs; mv resume.pdf pdfs/resume.pdf"
+          post_compile: "mkdir pdfs; mv resume.pdf pdfs/resume.pdf; "
       - name: Deploy to gh pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./pdf
+          publish_dir: ./pdfs
