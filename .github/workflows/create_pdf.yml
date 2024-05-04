@@ -10,14 +10,11 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Make pdf directory
-        run: |
-          mkdir pdf
-          cd pdf
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: ../resume.tex
+          root_file: resume.tex
+          post_compile: "mkdir pdfs; mv resume.pdf pdfs/resume.pdf"
       - name: Deploy to gh pages
         uses: peaceiris/actions-gh-pages@v4
         with:
