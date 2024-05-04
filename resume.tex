@@ -21,7 +21,7 @@
 \input{glyphtounicode}
 \usepackage{datatool, filecontents}
 \DTLsetseparator{,}
-\DTLloaddb[noheader, keys={thekey,thevalue}]{confidential}{confidential.dat}
+\DTLloaddb[noheader, keys={thekey,thevalue}]{confidential}{data/confidential.dat}
 \newcommand{\var}[1]{\DTLfetch{confidential}{thekey}{#1}{thevalue}}
 
 %----------FONT OPTIONS----------
