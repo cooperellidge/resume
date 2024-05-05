@@ -18,11 +18,12 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{fontawesome5}
 \input{glyphtounicode}
-\usepackage{datatool, filecontents}
-\DTLsetseparator{,}
-\DTLloaddb[noheader, keys={thekey,thevalue}]{confidential}{data/confidential.dat}
-\newcommand{\var}[1]{\DTLfetch{confidential}{thekey}{#1}{thevalue}}
+% \usepackage{datatool, filecontents}
+% \DTLsetseparator{,}
+% \DTLloaddb[noheader, keys={thekey,thevalue}]{confidential}{data/confidential.dat}
+% \newcommand{\var}[1]{\DTLfetch{confidential}{thekey}{#1}{thevalue}}
 
 %----------FONT OPTIONS----------
 % sans-serif
@@ -110,9 +111,10 @@
 %----------HEADING----------
 \begin{center}
   \textbf{\Huge Cooper Ellidge} \\ \vspace{1pt}
-  \small \var{mobile} $|$ \href{mailto:cooper.ellidge@gmail.com}{\underline{cooper.ellidge@gmail.com}} $|$
-  \href{https://cooperellidge.github.io}{\underline{cooperellidge.github.io}} $|$
-  \href{https://github.com/cooperellidge}{\underline{github.com/cooperellidge}}
+  \small \faPhone[solid] \hspace{1pt} \small 0458 781 380 $|$
+  \small \faEnvelope[solid] \hspace{1pt} \href{mailto:cooper.ellidge@gmail.com}{\underline{cooper.ellidge@gmail.com}} $|$
+  % \small \faUser[solid] \hspace{1pt} \href{https://cooperellidge.github.io}{\underline{cooperellidge.github.io}} $|$
+  \small \faGithub \hspace{1pt} \href{https://github.com/cooperellidge}{\underline{github.com/cooperellidge}}
 \end{center}
 
 
@@ -124,49 +126,48 @@
 {iO Energy}{}
 {Software Engineer}{Sep 2023 -- Now}
 \resumeItemListStart
-\resumeItem{Sales platform using React, Javascript, AWS (S3, Lambda, DynamoDB, Cognito, Step Functions), Flask}
-\resumeItem{Forecasting using Python, Pandas, FB Prophet}
-\resumeItem{Plans service}
-\resumeItem{Data pipeline using Snowflake, Dagster, DBT}
-\resumeItem{Internal Python package for domain-specific utilities}
-\resumeItem{Gleen using Django, React, Typescript, Docker, AWS (RDBMS, ECS)}
+\resumeItem{Developed features for an internal energy retail sales platform, improving customer growth from 1000 to over 2000 customers and reducing sales agent errors, using React, Javascript, AWS, and Flask.}
+\resumeItem{Forecasted electricty demand and financial profit using Python, Pandas, FB Prophet}
+\resumeItem{Created and maintained Python microservices for handling customer signups, plan managements, and sales agent commisons.}
+\resumeItem{Developed a full-stack app to calcualte and manage over-the-counter financial contracts and AEMO market settlements.}
+\resumeItem{Used Snowflake data warehouse to integrate data ETL pipelines into BI and risk management dashboards.}
+\resumeItem{Designed and architected a new energy retail SaaS product using Django, React, Typescript, and Docker.}
 \resumeItemListEnd
 
-\resumeSubheading
-{Predict Australia}{}
-{Software Engineer, contracting}{May 2024 -- Now}
-\resumeItemListStart
-\resumeItem{Predictive maintenance dashboards for mining site equipment using React}
-\resumeItemListEnd
+% \resumeSubheading
+% {Predict Australia}{}
+% {Software Engineer, contracting}{May 2024 -- Now}
+% \resumeItemListStart
+% \resumeItem{Predictive maintenance dashboards for mining site equipment using React}
+% \resumeItemListEnd
 
 \resumeSubheading
 {Saab Australia}{}
 {Software Engineer}{Jan 2023 -- Aug 2023}
 \resumeItemListStart
-\resumeItem{9LV on Track Finder, customer demo}
-\resumeItem{9LV with Java, Vue, Typescript using MVVM architectural patterns.}
+\resumeItem{Designed, developed, integrated and tested modules with for 9LV Combat Management System using Java, Vue, Typescript, and DDS in a MVVM software architeture.}
+\resumeItem{Presented new software capability to RAN customers during contract milestone demonstrations.}
 \resumeItemListEnd
 
 \resumeSubSubheading
 {Early Careers Lead}{Sep 2022 -- Aug 2023}
 \resumeItemListStart
-\resumeItem{Managed graduate program}
+\resumeItem{Coordinated over 50 graduates and interns for Saab's Early Careers Programs, including developing the programs' strategic direction, determing rotations, providing mentorship, and organising events.}
 \resumeItemListEnd
 
 \resumeSubSubheading
 {Graduate Engineer}{Jan 2021 -- Dec 2022}
 \resumeItemListStart
-\resumeItem{9LV on Track Rules Engine}
-\resumeItem{UxV motion motion}
-\resumeItem{Hospital module design for JP2060. Gold \& Silver awards nominamtion.}
-\resumeItem{Mechanical design for Swedish submarine}
+\resumeItem{Using full-stack software engineering skils to deliver naval operator user interfaces and enhanced tactical capabilities for RAN's surface fleet.}
+\resumeItem{Created a internal Python package to model and analyse autonomous vehicle's algorithm performance.}
+\resumeItem{Conducted extension requirments analysis and delivered design documents for hospital modules for Defence's deployable hospital program (JP2060), receiving a company Gold award nomination for critical efforts in producing major contract delivarables.}
+\resumeItem{Designed mechanical components in collaboration with Swedish submarine team, for their submarine program.}
 \resumeItemListEnd
 
 \resumeSubSubheading
 {Undergraduate Engineer}{Nov 2019 -- Feb 2020}
 \resumeItemListStart
-\resumeItem{Created and evaluated deep learning models using Python to improve environmental measurements
-  using sensor data. Sea trials.}
+\resumeItem{Prototyped and evaluated deep learning models using Python to improve environmental measurements using sensor data. The capability has since been succesfully tested on-ship during sea trials.}
 \resumeItemListEnd
 
 
@@ -174,8 +175,7 @@
 {Centre for the Subatomic Structure of Matter, University of Adelaide}{}
 {Physics Summer Research Student}{Jan 2019 -- Feb 2019}
 \resumeItemListStart
-\resumeItem{Modelled signals for different theoretical dark matter particles through batch jobs submitted to a
-  cloud supercomputer.}
+\resumeItem{Modelled experimental results for theoretical dark matter particles using a cloud supercomputer.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -203,17 +203,17 @@
           TypeScript,
           Java,
           HTML/CSS,
-          SQL,
+          SQL
           % Fortran
         } \\
-        \textbf{Tools}{:
+        \textbf{Tools, frameworks, and libraries}{:
           %-----------JS frameworks
           React,
           Vue,
           % Next.js,
           % HTMX,
           %-----------Python frameworks
-          % Django,
+          Django,
           FastAPI,
           % Chalice,
           Streamlit,
@@ -246,7 +246,7 @@
           Notion,
           Figma
         } \\
-        \textbf{Engineering Software}{:
+        \textbf{Software}{:
           %-----------CAD
           Creo Parametric,
           AutoDesk Inventor,
@@ -259,7 +259,9 @@
           MATLAB,
           Simulink,
           ANSYS suite,
-          COMSOL Multiphysics
+          COMSOL Multiphysics,
+          %-----------Modelling/simulation
+          Microsoft Office suite
         } \\
         }}
 \end{itemize}
