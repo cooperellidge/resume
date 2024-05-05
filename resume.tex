@@ -100,6 +100,21 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeDegree}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeDegreePartTwo}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -139,20 +154,13 @@
 {iO Energy}{}
 {Software Engineer}{Sep 2023 -- Now}
 \resumeItemListStart
-\resumeItem{Developed features for an internal energy retail sales platform, improving customer growth from 1000 to over 2000 customers and reducing sales agent errors, using React, Javascript, AWS, and Flask.}
+\resumeItem{Developed features for an internal energy retail sales platform, improving customer growth from 1000 to over 2000 customers and reducing sales agent errors, using React, Javascript, AWS, Python, Flask.}
 \resumeItem{Forecasted electricty demand and financial profit using Python, pandas, FB Prophet.}
 \resumeItem{Created microservices for handling customer signups, plan management, and sales commisions.}
 \resumeItem{Developed a full-stack app to calculate and reconcile financial contracts with AEMO market settlements.}
-\resumeItem{Used Snowflake data warehouse to integrate data ETL pipelines into BI and risk management dashboards.}
+\resumeItem{Used Snowflake data warehouse to integrate ETL pipelines into BI and risk management dashboards.}
 \resumeItem{Designed and architected a new energy retail SaaS product using Django, React, Typescript, and Docker.}
 \resumeItemListEnd
-
-% \resumeSubheading
-% {Predict Australia}{}
-% {Software Engineer, contracting}{May 2024 -- Now}
-% \resumeItemListStart
-% \resumeItem{Predictive maintenance dashboards for mining site equipment using React}
-% \resumeItemListEnd
 
 \resumeSubheading
 {Saab Australia}{}
@@ -215,13 +223,12 @@
 %-----------EDUCATION-----------
 \section{Education}
 \resumeSubHeadingListStart
-\resumeSubheading
+\resumeDegree
 {University of Adelaide}{}
 {Bachelor of Engineering (Mechanical)(Honours) with}{Feb 2016 -- Nov 2020}
-\resumeSubSubheading
+\resumeDegreePartTwo
 {Bachelor of Science (Mathematics and Theoretical Physics)}{GPA 6.7/7.0}
 \resumeSubHeadingListEnd
-
 
 
 %
@@ -234,36 +241,37 @@
           JavaScript,
           TypeScript,
           Java,
-          HTML/CSS,
-          SQL
+          SQL,
+          HTML,
+          CSS
           % Fortran
         } \\
-        \textbf{Tools, frameworks, and libraries}{:
+        \textbf{Tools and libraries}{:
           %-----------JS frameworks
           React,
           Vue,
           % Next.js,
           % HTMX,
-          %-----------Python frameworks
-          Django,
-          FastAPI,
-          % Chalice,
-          Streamlit,
           %-----------Cloud, infra, CI/CD
           AWS,
           % Vercel,
           Terraform,
           Docker,
           Jenkins,
+          %-----------Python frameworks
+          FastAPI,
+          Django,
+          % Chalice,
+          Streamlit,
           %-----------Scientific stack
           pandas,
           NumPy,
           SciPy,
-          Matplotlib,
-          Plotly,
+          % Matplotlib,
+          % Plotly,
           %-----------AI/ML + data
           keras,
-          scikit-learn,
+          % scikit-learn,
           FB Prophet,
           Snowflake,
           Dagster,
@@ -274,24 +282,24 @@
           Jira,
           BitBucket,
           Confluence,
-          FeCru,
-          Notion,
-          Figma
+          % FeCru,
+          Notion
+          % Figma
         } \\
         \textbf{Software}{:
-          %-----------CAD
           Creo Parametric,
+          %-----------Modelling/simulation
+          MATLAB,
+          Simulink,
+          ANSYS suite,
+          % COMSOL Multiphysics,
+          %-----------CAD
           AutoDesk Inventor,
           SolidWorks,
           %-----------Systems Engineering
           DOORS,
           Windchill,
           IFS,
-          %-----------Modelling/simulation
-          MATLAB,
-          Simulink,
-          ANSYS suite,
-          COMSOL Multiphysics,
           %-----------Modelling/simulation
           Microsoft Office suite
         } \\
