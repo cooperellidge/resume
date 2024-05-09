@@ -1,6 +1,10 @@
-resume.pdf
-resume.synctex.gz
+cover_letter.tex
+
+*.pdf
+*.synctex.gz
 
 data/*
 tmp/*
 out/*
+
+applications/*
